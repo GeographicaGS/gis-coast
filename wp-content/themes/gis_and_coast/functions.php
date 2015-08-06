@@ -44,14 +44,14 @@ function short_time_diff( $from, $to = '' ) {
     $diff = human_time_diff($from,$to);
 
     $replace = array(
-        'hour'  => __('hora','Medmis'),
-        'hours' => __('horas','Medmis'),
-        'day'   => __('día','Medmis'),
-        'days'  => __('días','Medmis'),
-        'min'   => __('minuto','Medmis'),
-        'mins'  => __('minutos','Medmis'),
-        'week'  => __('semana','Medmis'),
-        'weeks'  => __('semanas','Medmis')
+        'hour'  => __('hora','gis'),
+        'hours' => __('horas','gis'),
+        'day'   => __('día','gis'),
+        'days'  => __('días','gis'),
+        'min'   => __('minuto','gis'),
+        'mins'  => __('minutos','gis'),
+        'week'  => __('semana','gis'),
+        'weeks'  => __('semanas','gis')
     );
 
     return strtr($diff,$replace);
