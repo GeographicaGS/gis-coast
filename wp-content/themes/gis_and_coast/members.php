@@ -24,6 +24,7 @@ Template Name: members
 							'category'         => 16,
 							'orderby'          => 'date',
 							'order'          => 'DESC',
+							'numberposts'       => -1,
 							'suppress_filters' => 0 
 						);
 						$posts = get_posts( $args );
