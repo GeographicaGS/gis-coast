@@ -33,14 +33,16 @@ Template Name: Contact
 
 
 <section id="contact">
-	<iframe width="100%" height="468" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?hl=es&q=Universidad+de+Sevilla+Facultad+de+Geografia+e+Historia&amp;aq=&amp;sll=37.6046745,-5.6679935&hq=&amp;hnear=Universidad de Sevilla Facultad de Geografia e Historia&amp;ll=37.6046745,-5.6679935&ie=UTF8&t=k&z=7&iwloc=B&output=embed&sll=37.6046745,-5.6679935"></iframe>
+	<div class="gmap">
+		<iframe  width="100%" height="468" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?hl=es&q=Universidad+de+Sevilla+Facultad+de+Geografia+e+Historia&amp;aq=&amp;sll=37.6046745,-5.6679935&hq=&amp;hnear=Universidad de Sevilla Facultad de Geografia e Historia&amp;ll=37.6046745,-5.6679935&ie=UTF8&t=k&z=7&iwloc=B&output=embed&sll=37.6046745,-5.6679935"></iframe>
+	</div>
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4 col-md-4 border">
+			<div class="col-sm-12 col-md-4 border">
 				<?php the_content(); ?>
 			</div>
-			<div class="col-sm-8 col-md-8">
+			<div class="col-sm-12 col-md-8">
 				
 				<?php if($email){ ?>
 					<div class="info">
@@ -61,7 +63,7 @@ Template Name: Contact
 				            <input type="hidden" name="sent" id="sent" value="1" />
 				            <div id="form">
 				            	<h3><?echo __('Formulario de contacto','gis')?></h3>
-					            <div class="fleft" style="width: calc(50% - 20px);">
+					            <div class="fleft col-1">
 					                
 				                	<input type="text" name="tu_nombre" id="tu_nombre" placeholder="<?echo __('Nombre y apellidos','gis')?>" value="<?php if(isset($_POST['tu_nombre'])) echo $_POST['tu_nombre'];?>" />
 					               
@@ -79,7 +81,7 @@ Template Name: Contact
 
 				            </div>
 
-				            <div class="fright" id="input-field">
+				            <div class="fright col-2" id="input-field" >
 				            	<input class="button" type="submit" name = "send" value = "<?echo __('Enviar formulario','gis')?>" />
 				            </div>
 				    </form>

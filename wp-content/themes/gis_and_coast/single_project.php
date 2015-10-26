@@ -11,6 +11,9 @@ $web = get_post_meta($post->ID,"Proyecto - Web");
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-md-12">
+				<div class="thumbnail imgProject">
+					<?php the_post_thumbnail(); ?>
+				</div>
 				<div class="header <?if(has_post_thumbnail()){echo "maxWidth";}?>">
 					<div class="authorInfo">
 						<?php if($reference){?>
@@ -20,9 +23,7 @@ $web = get_post_meta($post->ID,"Proyecto - Web");
 					<h1><?=$post->post_title?></h1>
 					<h3><?=$post->post_excerpt?></h3>
 				</div>
-				<div class="thumbnail">
-					<?php the_post_thumbnail(); ?>
-				</div>
+				
 				<div class="clear"></div>
 				<div class="tags">
 					<?php 

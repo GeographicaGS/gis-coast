@@ -19,9 +19,9 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-12 col-md-12">
-						<img class="logo" width="183px" src="<?=get_stylesheet_directory_uri().'/images/GaC_logo_cab.png'?>">
+						<a href="<? echo esc_url( home_url( '/' ) ); ?>"><img class="logo" width="183px" src="<?=get_stylesheet_directory_uri().'/images/GaC_logo_cab.png'?>"></a>
 						<div class="fright">
-							<ul class="languageSelector">
+							<ul class="languageSelector visible-md-block">
 								<?php if(ICL_LANGUAGE_CODE == "es"){ ?>
 									<li>
 										<?echo __('Idioma','gis')?>
@@ -44,16 +44,49 @@
 									</li>
 								<?php } ?>
 							</ul>
-							<span class="fleft size_12"><?echo __('Grupo de investigación HUM-738','gis')?><br><?echo __('Universidad de Sevilla','gis')?><br><?echo __('PAIDI. Junta de Andalucía','gis')?></span>
+							<span class="fleft size_12 uds-caption"><?echo __('Grupo de investigación HUM-738','gis')?><br><?echo __('Universidad de Sevilla','gis')?><br><?echo __('PAIDI. Junta de Andalucía','gis')?></span>
 							<img class="logoUni" width="53px" src="<?=get_stylesheet_directory_uri().'/images/GaC_logo_US_cab.png'?>">
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-12 col-md-12 menu">
-						<?php wp_nav_menu( array('menu' => 'Main', 'container' => 'nav' )); ?>
-					</div>
-				</div>
+					<div class="col-sm-12 col-md-12 menu-wrapper">
+						<button type="button" class="navbar-toggle visible-sm" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+	
+							<div class="icon-bar-container">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</div>
+							<span class="txtBtn">Menu</span>
+						</button>
+					
+						<ul class="languageSelector visible-sm">
+								<?php if(ICL_LANGUAGE_CODE == "es"){ ?>
+									<li>
+										<?echo __('Idioma','gis')?>
+									</li>
+									<li>
+										<a href="<?=site_url()?>/en/"> <?echo __('Inglés','gis')?></a>
+									</li>
+									<li class="active">
+										<a href="<?=site_url()?>/"> <?echo __('Español','gis')?></a>
+									</li>
+								<?php }else if(ICL_LANGUAGE_CODE == "en"){ ?>
+									<li>
+										<?echo __('Idioma','gis')?>
+									</li>
+									<li class="active">
+										<a href="<?=site_url()?>/en/"> <?echo __('Inglés','gis')?></a>
+									</li>
+									<li>
+										<a href="<?=site_url()?>/"> <?echo __('Español','gis')?></a>
+									</li>
+								<?php } ?>
+							</ul>
+							<?php wp_nav_menu( array('menu' => 'Main', 'container' => 'nav' )); ?>
+					</div><!-- menu -->
+				</div><!-- row -->
 			</div>
 		</header>
 

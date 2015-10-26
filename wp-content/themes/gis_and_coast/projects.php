@@ -20,7 +20,7 @@ $authorsName = array();
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-9 col-md-9 border">
+			<div class="col-sm-12 col-md-9 border">
 				<?php 
 					$args = array(
 						'category'         => 21,
@@ -68,7 +68,7 @@ $authorsName = array();
 
 			</div>
 
-			<div class="col-sm-3 col-md-3">
+			<div class="col-sm-12 col-md-3">
 				<div class="tags">
 					<h3><?echo __('Etiquetas','gis')?></h3>
 					<?php 

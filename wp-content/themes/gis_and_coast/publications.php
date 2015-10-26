@@ -13,7 +13,7 @@ $authorsName = array();
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-9 col-md-9 border">
+			<div class="col-sm-12 col-md-9 border">
 					<?php 
 						$args = array(
 							'category'         => 23,
@@ -42,7 +42,7 @@ $authorsName = array();
 								<div class="thumbnailPublication">
 									<?php the_post_thumbnail(); ?>
 								</div>
-								<div style="<?if(has_post_thumbnail()){echo "padding-left: 120px;";}?>">
+								<div class="<?if(has_post_thumbnail()){echo "textPublication";}?>">
 									<h2><?=$post->post_title?></h2>
 									<p><?=get_the_excerpt()?></p>
 									<span class="continue"><?echo __('Consultar publicación','gis')?></span>
@@ -55,7 +55,7 @@ $authorsName = array();
 					?>
 
 			</div>
-			<div class="col-sm-3 col-md-3">
+			<div class="col-sm-12 col-md-3">
 				<div class="tags">
 					<h3><?echo __('Etiquetas','gis')?></h3>
 					<?php 

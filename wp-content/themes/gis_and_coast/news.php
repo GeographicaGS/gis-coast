@@ -15,7 +15,7 @@ $authorsName = array();
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-9 col-md-9 border">
+			<div class="col-sm-12 col-md-9 border">
 					<?php 
 						$args = array(
 							'category'         => 4,
@@ -51,9 +51,9 @@ $authorsName = array();
 								<span class="time">
 									<?= short_time_diff( get_the_time('U'), current_time('timestamp')) ?>
 								</span>
-								<h2><?=$post->post_title?></h2>
+								<h2><a href="<?=the_permalink()?>"><?=$post->post_title?></a></h2>
 								<p><?=get_the_excerpt()?></p>
-								<span class="continue"><?echo __('Seguir leyendo','gis')?></span>
+								<span class="continue"><a href="<?=the_permalink()?>"><?echo __('Seguir leyendo','gis')?></a></span>
 							</a>
 						</article>
 						
@@ -63,7 +63,7 @@ $authorsName = array();
 					?>
 
 			</div>
-			<div class="col-sm-3 col-md-3">
+			<div class="col-sm-12 col-md-3">
 				<div class="tags">
 					<h3><?echo __('Etiquetas','gis')?></h3>
 					<?php 

@@ -35,6 +35,8 @@ add_action('init', 'theme_enqueue_styles');
 function theme_enqueue_scripts() {
 	if (!is_admin()){
 		wp_enqueue_script('jqueryGis', get_stylesheet_directory_uri().'/js/lib/jquery-2.1.4.min.js');
+		wp_enqueue_script( 'myscript', get_template_directory_uri() . '/js/myscript.js', array( ), false, 'all' );
+
 	}
 }
 add_action('init', 'theme_enqueue_scripts');

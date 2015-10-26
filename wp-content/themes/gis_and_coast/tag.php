@@ -26,7 +26,7 @@ wp_reset_postdata();
 <section id="tag">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-9 col-md-9 border">
+			<div class="col-sm-12 col-md-9 border">
 				<?php if(count($news) > 0){ ?>
 					<section id="news">
 						<h2 class="title"><?echo __('Novedades para','gis')?> <span><?=single_tag_title()?></span></h2>
@@ -111,7 +111,7 @@ wp_reset_postdata();
 									<div class="thumbnailPublication">
 										<?php the_post_thumbnail(); ?>
 									</div>
-									<div style="<?if(has_post_thumbnail()){echo "padding-left: 120px;";}?>">
+									<div class="<?if(has_post_thumbnail()){echo "textPublication";}?>">
 										<h2><?=$post->post_title?></h2>
 										<p><?=get_the_excerpt()?></p>
 										<span class="continue"><?echo __('Consultar publicación','gis')?></span>
@@ -147,7 +147,7 @@ wp_reset_postdata();
 				<?php } ?>
 			</div>
 
-			<div class="col-sm-3 col-md-3">
+			<div class="col-sm-12 col-md-3">
 				<div class="tags">
 					<h3><?echo __('Etiquetas','gis')?></h3>
 					<?php 

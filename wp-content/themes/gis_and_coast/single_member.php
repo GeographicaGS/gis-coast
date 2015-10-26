@@ -28,18 +28,19 @@ $connected = p2p_type( 'posts_to_posts' )->get_connected( $post->ID );
 					<h1><?=$post->post_title?></h1>
 					<h3><?=$post->post_excerpt?></h3>
 				</div>
-				<div class="fright">
+				<div class="member-contact">
 					<?php if($email){
 						echo get_avatar( $email[0], 144 );
 					} ?>
 				</div>
 				<div class="clear"></div>
 				<div class="selectors">
-					<span class="proyect active"><?echo __('Proyectos','gis')?></span>
-					<span class="publication"><?echo __('Publicaciones','gis')?></span>
 					<?php if($sisius){?>
 					<a target="_blank" href="<?=$sisius[0]?>"><?echo __('Perfil de SISIUS · Curriculum','gis')?></a>
 					<?php } ?>
+					<span class="proyect active"><?echo __('Proyectos','gis')?></span>
+					<span class="publication"><?echo __('Publicaciones','gis')?></span>
+					
 				</div>
 				<!-- <?php the_content(); ?> -->
 				<div class="proyectList">
