@@ -21,6 +21,7 @@ $authorsName = array();
 							'category'         => 4,
 							'orderby'          => 'date',
 							'order'          => 'DESC',
+							'numberposts'       => -1,
 							'suppress_filters' => 0 
 						);
 						$posts = get_posts( $args );
