@@ -50,7 +50,12 @@ $web = get_post_meta($post->ID,"Proyecto - Web");
 					<?php the_content(); ?>
 					<div class="authors">
 						<?php 
-							$connected = p2p_type( 'posts_to_posts' )->get_connected( $post->ID );
+							// $connected = p2p_type( 'posts_to_posts' )->get_connected( $post->ID );
+							$connected = new WP_Query( array(
+							  'connected_type' => 'posts_to_posts',
+							  'connected_items' =>  $post->ID,
+							  'nopaging' => true,
+							));
 							if ( $connected->have_posts() ) :
 						?>
 								<h4><?echo __('Participantes en el proyecto','gis')?></h4>
