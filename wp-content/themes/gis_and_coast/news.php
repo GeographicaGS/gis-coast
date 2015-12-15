@@ -32,7 +32,12 @@ $authorsName = array();
 							<a href="<?=the_permalink()?>">
 								<div class="img" style="background-image:url(<?=wp_get_attachment_url( get_post_thumbnail_id($post->ID))?>)"></div>
 								<?php 
-									$connected = p2p_type( 'posts_to_posts' )->get_connected( $post->ID );
+									// $connected = p2p_type( 'posts_to_posts' )->get_connected( $post->ID );
+									$connected = new WP_Query( array(
+									  'connected_type' => 'posts_to_posts',
+									  'connected_items' =>  $post->ID,
+									  'nopaging' => true,
+									));
 									if ( $connected->have_posts() ) :
 										while ( $connected->have_posts() ) : $connected->the_post();
 											if(!in_array(get_the_title(),$authorsName)){

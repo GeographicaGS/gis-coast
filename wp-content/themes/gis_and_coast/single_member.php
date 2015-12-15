@@ -6,7 +6,12 @@ $tlf = get_post_meta($post->ID,"Miembro - Teléfono");
 $subTitle = get_post_meta($post->ID,"Subtítulo");
 $sisius = get_post_meta($post->ID,"Miembro - Perfil de SISIUS");
 
-$connected = p2p_type( 'posts_to_posts' )->get_connected( $post->ID );
+// $connected = p2p_type( 'posts_to_posts' )->get_connected( $post->ID );
+$connected = new WP_Query( array(
+			  'connected_type' => 'posts_to_posts',
+			  'connected_items' =>  $post->ID,
+			  'nopaging' => true,
+			));
 ?>
 <section id="post" class="singleMember">
 	<div class="container">

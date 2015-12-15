@@ -39,7 +39,12 @@
 							<h2><?=$post->post_title?></h2>
 							<p><?=get_the_excerpt()?></p>
 							<?php 
-								$connected = p2p_type( 'posts_to_posts' )->get_connected( $post->ID );
+								// $connected = p2p_type( 'posts_to_posts' )->get_connected( $post->ID );
+								$connected = new WP_Query( array(
+								  'connected_type' => 'posts_to_posts',
+								  'connected_items' =>  $post->ID,
+								  'nopaging' => true,
+								));
 								if ( $connected->have_posts() ) :
 									while ( $connected->have_posts() ) : $connected->the_post();
 							?>

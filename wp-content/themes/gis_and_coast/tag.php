@@ -38,7 +38,12 @@ wp_reset_postdata();
 									<div class="img" style="background-image:url(<?=wp_get_attachment_url( get_post_thumbnail_id($new->ID))?>)"></div>
 
 									<?php 
-										$connected = p2p_type( 'posts_to_posts' )->get_connected( $new->ID );
+										// $connected = p2p_type( 'posts_to_posts' )->get_connected( $new->ID );
+											$connected = new WP_Query( array(
+											  'connected_type' => 'posts_to_posts',
+											  'connected_items' =>  $new->ID,
+											  'nopaging' => true,
+											));
 										if ( $connected->have_posts() ) :
 											while ( $connected->have_posts() ) : $connected->the_post();
 											?>
