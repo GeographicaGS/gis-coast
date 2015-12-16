@@ -1,5 +1,5 @@
 		<footer>
-			<span class="ml20">2015 © GIS and Coast Research Group HUM 738</span>
+			<span class="ml20">2015 © GIS and Coast Research Group RNM-177</span>
 			<div class="fright mr25">
 				<a href=""><?echo __('Información Legal','gis')?></a>
 				<a href=""><?echo __('Política de privacidad','gis')?></a>

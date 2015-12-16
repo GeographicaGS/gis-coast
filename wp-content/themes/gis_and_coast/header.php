@@ -44,7 +44,7 @@
 									</li>
 								<?php } ?>
 							</ul>
-							<span class="fleft size_12"><?echo __('Grupo de investigación HUM-738','gis')?><br><?echo __('Universidad de Sevilla','gis')?><br><?echo __('PAIDI. Junta de Andalucía','gis')?></span>
+							<span class="fleft size_12"><?echo __('Grupo de investigación RNM-177','gis')?><br><?echo __('Universidad de Sevilla','gis')?><br><?echo __('PAIDI. Junta de Andalucía','gis')?></span>
 							<img class="logoUni" width="53px" src="<?=get_stylesheet_directory_uri().'/images/GaC_logo_US_cab.png'?>">
 						</div>
 					</div>
