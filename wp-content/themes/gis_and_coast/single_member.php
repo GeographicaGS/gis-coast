@@ -130,6 +130,7 @@ $connected = new WP_Query( array(
 		$(".proyectList").hide();
 		$(".publicationList").fadeIn();
 	});
-	$('#menu-item-315, #menu-item-316').addClass('current_page_item')
+	// $('#menu-item-315, #menu-item-316').addClass('current_page_item')
+	$('#menu-item-1054, #menu-item-1055').addClass('current_page_item')
 </script>
 <?php get_footer(); ?>
