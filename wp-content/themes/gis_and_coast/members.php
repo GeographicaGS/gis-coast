@@ -17,7 +17,7 @@ Template Name: members
 
 	<div class="memberList">
 		<div class="container">
-			<div class="row">
+			<div class="row memberList-inner">
 				<!-- <div class="col-sm-12 col-md-12"> -->
 					<?php 
 						$args = array(
@@ -31,7 +31,7 @@ Template Name: members
 						foreach ( $posts as $post ) : setup_postdata( $post );
 							$email = get_post_meta($post->ID,"Miembro - email");
 						?>
-						<div class="col-sm-3 col-md-3">
+						<div class="col-sm-12 col-md-3">
 							<a href="<?=get_permalink();?>">
 								<?php
 									if($email){

@@ -17,8 +17,19 @@ $connected = new WP_Query( array(
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-md-12">
-				<div class="header maxWidth">
+					<div class="header maxWidth">
+
 					<div class="authorInfo">
+						
+						<div class="tags">
+							<?php if(ICL_LANGUAGE_CODE == "es"){ ?>
+								<a class="group" href="<?=get_page_link(211)?>"><?echo __('Equipo','gis')?></a>
+							<?php }else if(ICL_LANGUAGE_CODE == "en"){ ?>
+								<a class="group" href="<?=get_page_link(213)?>"><?echo __('Equipo','gis')?></a>
+							<?php } ?>
+						
+						</div>
+
 						<span style="color: #76777b; font-size:13px;"><?echo __('Contacto','gis')?>:</span>
 						<?php if($email){ ?>
 							<a class="author" href="mailto:$email[0]"><?=$email[0]?></a>

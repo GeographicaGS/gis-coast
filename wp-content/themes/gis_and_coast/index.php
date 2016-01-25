@@ -2,12 +2,42 @@
 
   <section id="home">
 	
-	<?php putRevSlider("slider_" . ICL_LANGUAGE_CODE) ?>
+	<?php //putRevSlider("slider_" . ICL_LANGUAGE_CODE) ?>
 
-	<div class="container-fluid init">
+	<div class="container init">
 		<div class="row">
 			<div class="col-sm-12 col-md-12">
 				<?php the_content(); ?>
+			</div>
+		</div>
+	</div>
+
+	<div id="viewers">
+		<div class="container">
+			<div class="row articleList">
+				<?php 
+					$args = array(
+						'category'         => 25,
+						'orderby'          => 'date',
+						'order'          => 'DESC',
+						'suppress_filters' => 0 
+					);
+					$posts = get_posts( $args );
+					foreach ( $posts as $post ) : setup_postdata( $post );
+				 ?>
+				<div class="col-sm-12 col-md-4 col-lg-3">
+					<a href="<?=the_permalink()?>">
+						<article>
+							<div class="img" style="background-image:url(<?=wp_get_attachment_url( get_post_thumbnail_id($post->ID))?>)"></div>
+							<h2><?=$post->post_title?></h2>
+							<p><?=get_the_excerpt()?></p>
+						</article>
+					</a>
+				</div>
+				<?php 
+					endforeach;
+					wp_reset_postdata();
+				?>
 			</div>
 		</div>
 	</div>
@@ -32,7 +62,7 @@
 					$posts = get_posts( $args );
 					foreach ( $posts as $post ) : setup_postdata( $post );
 				 ?>
-				<div class="col-sm-6 col-md-4 col-lg-3">
+				<div class="col-sm-12 col-md-4 col-lg-3">
 					<a href="<?=the_permalink()?>">
 						<article>
 							<div class="img" style="background-image:url(<?=wp_get_attachment_url( get_post_thumbnail_id($post->ID))?>)"></div>

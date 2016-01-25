@@ -53,20 +53,25 @@ $authorsName = array();
 						endif;
 						$post = $project;
 				?>	
-					<a href="<?=the_permalink()?>">
-						<div class="project">
-							<?php the_post_thumbnail(); ?>
-							<div class="clear"></div>
-							<?php if($reference){?>
-								<span class="reference"><?=$reference[0]?></span>
-							<?php } ?>
-							<h3><?=$post->post_title?></h3>
-							<p><?=get_the_excerpt()?></p>
-							<?php if($period){?>
-								<span class="period"><?=$period[0]?></span>
-							<?php } ?>
-						</div>
-					</a>
+					<article>
+						<a href="<?=the_permalink()?>">
+							<div class="project">
+								<div class="fleft">
+									<?php the_post_thumbnail(); ?>
+								</div>
+								<div class="project-content">
+									<?php if($reference){?>
+										<span class="reference"><?=$reference[0]?></span>
+									<?php } ?>
+									<h3><?=$post->post_title?></h3>
+									<p><?=get_the_excerpt()?></p>
+									<?php if($period){?>
+										<span class="period"><?=$period[0]?></span>
+									<?php } ?>
+								</div>
+							</div>
+						</a>
+					</article>
 				<?php 
 					endforeach;
 					wp_reset_postdata();

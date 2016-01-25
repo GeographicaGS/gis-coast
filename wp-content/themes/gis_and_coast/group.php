@@ -20,10 +20,16 @@ Template Name: Group
 				<div class="tags">
 					<?php if(ICL_LANGUAGE_CODE == "es"){ ?>
 						<a class="line" href="<?=get_page_link(171)?>"><?echo __('Líneas de investigación','gis')?></a>
-						<a class="group" href="<?=get_page_link(211)?>"><?echo __('Miembros del grupo','gis')?></a>
+						<a class="group" href="<?=get_page_link(211)?>"><?echo __('Equipo','gis')?></a>
+						<a class="project" href="<?=get_page_link(13)?>"><?echo __('Proyectos','gis')?></a>
+						<a class="research" href="<?=get_page_link(15)?>"><?echo __('Publicaciones','gis')?></a>
+						<a class="viewer" href="<?=get_page_link(7)?>"><?echo __('Visores','gis')?></a>
 					<?php }else if(ICL_LANGUAGE_CODE == "en"){ ?>
 						<a class="line" href="<?=get_page_link(173)?>"><?echo __('Líneas de investigación','gis')?></a>
-						<a class="group" href="<?=get_page_link(213)?>"><?echo __('Miembros del grupo','gis')?></a>
+						<a class="group" href="<?=get_page_link(213)?>"><?echo __('Equipo','gis')?></a>
+						<a class="project" href="<?=get_page_link(68)?>"><?echo __('Proyectos','gis')?></a>
+						<a class="research" href="<?=get_page_link(74)?>"><?echo __('Publicaciones','gis')?></a>
+						<a class="viewer" href="<?=get_page_link(53)?>"><?echo __('Visores','gis')?></a>
 					<?php } ?>
 					
 				</div>
