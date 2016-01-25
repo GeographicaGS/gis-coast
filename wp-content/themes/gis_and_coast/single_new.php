@@ -79,5 +79,8 @@
 			</div>
 		</div>
 	</div>
-</section>	
+</section>
+<script>
+	$('#menu-item-26, #menu-item-158').addClass('current_page_item')
+</script>	
 <?php get_footer(); ?>

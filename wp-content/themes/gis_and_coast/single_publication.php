@@ -91,5 +91,8 @@ $pdf = get_post_meta($post->ID,"Publicación - PDF");
 			</div>
 		</div>
 	</div>
-</section>	
+</section>
+<script>
+	$('#menu-item-23, #menu-item-161').addClass('current_page_item')
+</script>
 <?php get_footer(); ?>

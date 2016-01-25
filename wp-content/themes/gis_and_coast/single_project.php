@@ -93,5 +93,8 @@ $web = get_post_meta($post->ID,"Proyecto - Web");
 			</div>
 		</div>
 	</div>
-</section>	
+</section>
+<script>
+	$('#menu-item-24, #menu-item-160').addClass('current_page_item')
+</script>
 <?php get_footer(); ?>

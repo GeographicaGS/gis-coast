@@ -25,7 +25,7 @@
 					$posts = get_posts( $args );
 					foreach ( $posts as $post ) : setup_postdata( $post );
 				 ?>
-				<div class="col-sm-12 col-md-4 col-lg-3">
+				<div class="col-sm-12 col-md-4 col-lg-4">
 					<a href="<?=the_permalink()?>">
 						<article>
 							<div class="img" style="background-image:url(<?=wp_get_attachment_url( get_post_thumbnail_id($post->ID))?>)"></div>

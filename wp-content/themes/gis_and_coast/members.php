@@ -22,8 +22,9 @@ Template Name: members
 					<?php 
 						$args = array(
 							'category'         => 16,
-							'orderby'          => 'date',
-							'order'          => 'DESC',
+							'meta_key'			=> 'Miembro - Orden',
+							'orderby'          => 'meta_value_num',
+							'order'          => 'ASC',
 							'numberposts'       => -1,
 							'suppress_filters' => 0 
 						);

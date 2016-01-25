@@ -54,5 +54,5 @@ $urlViewer = get_post_meta($post->ID,"Visor - web");
 			</div>
 		</div>
 	</div>
-</section>	
+</section>
 <?php get_footer(); ?>
