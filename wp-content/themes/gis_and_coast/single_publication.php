@@ -40,7 +40,7 @@ $pdf = get_post_meta($post->ID,"Publicación - PDF");
 								<a class="pdf" target="_blank" href="<?=wp_get_attachment_url($pdf[0]);?>"><?echo __('Publicación en PDF','gis')?></a>
 							<?php } ?>
 							<?php if($moreInfo){?>
-								<a class="more <?if($pdf){echo 'boderRight';} ?>" target="_blank" href="<?=$moreInfo[0]?>"><?echo __('Más información','gis')?></a>
+								<a class="more <?if($pdf){echo 'boderRight';} ?>" target="_blank" href="<?=$moreInfo[0]?>"><?echo __('Vínculo web','gis')?></a>
 							<?php } ?>
 						</div>
 					<?php } ?>
