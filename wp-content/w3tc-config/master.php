@@ -277,7 +277,7 @@ return array(
 		9 => '{plugins_dir}/*.png',
 	),
 	'cdn.import.external' => false,
-	'cdn.import.files' => false,
+	'cdn.import.files' => '',
 	'cdn.queue.interval' => 900,
 	'cdn.queue.limit' => 25,
 	'cdn.force.rewrite' => false,
