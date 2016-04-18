@@ -88,7 +88,7 @@ $authorsName = array();
 							<li>
 						<?php 
 								if($author["email"]){
-									echo get_avatar( $author["email"], 32 );
+									echo get_avatar( $author["email"][0], 32 );
 								}
 						?>
 								<a href="<?=$author["permalink"]?>">
