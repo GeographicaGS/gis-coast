@@ -7,7 +7,7 @@ $pdf = get_post_meta($post->ID,"Publicación - PDF");
 
 ?>
 
-<section id="post" class="singleProject">
+<section id="post" class="singleProject singlePublication">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-md-12">
@@ -17,12 +17,46 @@ $pdf = get_post_meta($post->ID,"Publicación - PDF");
 					<h1><?=$post->post_title?></h1>
 					<h3><?=$post->post_excerpt?></h3>
 				</div>
-
+				
+				<?php if(has_post_thumbnail()){ ?>
 				<div class="thumbnail">
 					<?php the_post_thumbnail(); ?>
 				</div>
+				<?php } ?>
 				
 				<div class="clear"></div>
+				
+				<div class="authors">
+					<?php 
+						// $connected = p2p_type( 'posts_to_posts' )->get_connected( $post->ID );
+						$connected = new WP_Query( array(
+						  'connected_type' => 'posts_to_posts',
+						  'connected_items' =>  $post->ID,
+						  'nopaging' => true,
+						));
+						if ( $connected->have_posts() ) :
+					?>
+							<h4><?echo __('Autores','gis')?></h4>
+					<?php 
+							while ( $connected->have_posts() ) : $connected->the_post();
+								$email = get_post_meta($post->ID,"Miembro - email");
+					?>	
+								<div class="author_p">
+									<a href="<?=the_permalink()?>">
+										<?php if($email){
+											echo get_avatar( $email[0], 32 );
+										}?>
+										<?=the_title();?>
+										<span class="clear"></span>
+									</a>
+								</div>
+					<?php 
+							endwhile;
+							wp_reset_postdata();
+						endif;
+					?>
+				</div>
+
 				<div class="tags pb">
 					<?php 
 						$tags = wp_get_post_tags($post->ID);
@@ -47,34 +81,6 @@ $pdf = get_post_meta($post->ID,"Publicación - PDF");
 				</div>
 				<div class="content">
 					<?php the_content(); ?>
-					<div class="authors">
-						<?php 
-							// $connected = p2p_type( 'posts_to_posts' )->get_connected( $post->ID );
-							$connected = new WP_Query( array(
-							  'connected_type' => 'posts_to_posts',
-							  'connected_items' =>  $post->ID,
-							  'nopaging' => true,
-							));
-							if ( $connected->have_posts() ) :
-						?>
-								<h4><?echo __('Autores','gis')?></h4>
-						<?php 
-								while ( $connected->have_posts() ) : $connected->the_post();
-									$email = get_post_meta($post->ID,"Miembro - email");
-						?>
-									<a href="<?=the_permalink()?>">
-										<?php if($email){
-											echo get_avatar( $email[0], 32 );
-										}?>
-										<?=the_title();?>
-										<span class="clear"></span>
-									</a>
-						<?php 
-								endwhile;
-								wp_reset_postdata();
-							endif;
-						?>
-					</div>
 				</div>
 				<div class="share">
 					<span><?echo __('Compartir en','gis')?></span>
