@@ -89,6 +89,13 @@ function get_category_tags($args) {
 	return $tags;
 }
 
+
+function remove_pagination($query){
+	$query->set('suppress_filters',0);
+	$query->set('numberposts',-1);
+}
+add_action( 'pre_get_posts', 'remove_pagination' );
+
 ///////Shortcodes//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function proyect_list_func($attr,$content){
 	return '<div class="proyectList">'.do_shortcode($content).'</div>';
