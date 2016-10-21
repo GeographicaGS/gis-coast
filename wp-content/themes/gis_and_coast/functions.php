@@ -93,6 +93,7 @@ function get_category_tags($args) {
 function remove_pagination($query){
 	$query->set('suppress_filters',0);
 	$query->set('numberposts',-1);
+	$query->set('posts_per_page',-1);
 }
 add_action( 'pre_get_posts', 'remove_pagination' );
 
